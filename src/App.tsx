@@ -1,12 +1,13 @@
+import { Home } from "./assets/pages/home/Home"
 
 
 
 function App() {
  
-
+  
   return (
     <>
-     APP
+     <Home />
     </>
   )
 }
