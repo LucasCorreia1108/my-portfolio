@@ -6,7 +6,15 @@ import EmailIcon from "@mui/icons-material/Email";
 import { StyledButton } from "../../../../components/StyledButton/StyledButton";
 import backgroundAnime from "../../../../../assets/images/Background _animation.svg";
 
+const contactEmail = "lucascorreianasc1108@gmail.com";
+const contactSubject = "Contato%20via%20site";
+const contactBody = "Olá%20Lucas,%0D%0A%0D%0AEstou%20interessado%20em%20entrar%20em%20contato%20com%20você.%0D%0A%0D%0AAtenciosamente,";
+
 export const Hero = () => {
+  const handleContactClick = () => {
+    window.location.href = `mailto:${contactEmail}?subject=${contactSubject}&body=${contactBody}`;
+  };
+
   return (
     <div>
       <StyledHero>
@@ -71,13 +79,13 @@ export const Hero = () => {
                     alignItems: "center",
                   }}
                 >
-                  <StyledButton>
+                  <StyledButton href="/cv-lucas-correia.pdf" download>
                     <DownloadForOfflineIcon />
                     <Typography color="primary.contrastText" sx={{ textAlign: "center" }}>
                       Download CV
                     </Typography>
                   </StyledButton>
-                  <StyledButton>
+                  <StyledButton onClick={handleContactClick}>
                     <EmailIcon />
                     <Typography color="primary.contrastText" sx={{ textAlign: "center" }}>
                       Contact Me

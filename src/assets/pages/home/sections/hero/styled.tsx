@@ -28,7 +28,7 @@ export const StyledAvatar = styled("img")(({ theme }) => ({
 //   aspectRatio: "1",
   borderRadius: "50%",
   border: `6px solid ${theme.palette.secondary.main}`,
-  boxShadow: "0 24px 70px rgba(0, 0, 0, 0.35)",
+  boxShadow: "0 24px 70px rgba(26, 92, 59, 0.35)",
   transition: "transform 0.45s ease, filter 0.45s ease",
   backgroundColor: theme.palette.primary.dark,
   "&:hover": {

@@ -1,11 +1,11 @@
 import { styled } from "@mui/material";
 
-interface StyledButtonProps {
+interface StyledButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
 }
 
-export const StyledButton: React.FC<StyledButtonProps> = ({ children }) => {
-  const StyledBtn = styled("button")(({ theme }) => ({
+export const  StyledButton: React.FC<StyledButtonProps> = ({ children, href, download, onClick, ...rest }) => {
+  const StyledBtn = styled("a")(({ theme }) => ({
     width: "100%",
     maxWidth: 250,
     padding: "0.85rem 1.75rem",
@@ -23,6 +23,7 @@ export const StyledButton: React.FC<StyledButtonProps> = ({ children }) => {
     boxShadow: "0 18px 40px rgba(0, 0, 0, 0.16)",
     backdropFilter: "blur(12px)",
     webkitBackdropFilter: "blur(12px)",
+    textDecoration: "none",
     "&:hover": {
       transform: "translateY(-2px)",
       backgroundColor: theme.palette.secondary.main,
@@ -36,7 +37,15 @@ export const StyledButton: React.FC<StyledButtonProps> = ({ children }) => {
   }));
 
   return (
-    <StyledBtn>
+    <StyledBtn
+      href={href}
+      download={download}
+      onClick={(event) => {
+        if (!href) event.preventDefault();
+        onClick?.(event as React.MouseEvent<HTMLAnchorElement, MouseEvent>);
+      }}
+      {...rest}
+    >
       {children}
     </StyledBtn>
   );
