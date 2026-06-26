@@ -3,11 +3,11 @@ import { Box, Container, Typography, styled } from "@mui/material";
 
 const StyledAboutSection = styled("section")(({ theme }) => ({
   padding: theme.spacing(10, 0),
-  backgroundColor: theme.palette.secondary.light,
+//   backgroundColor: theme.palette.secondary.main,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  minHeight: "40vh",
+  minHeight: "60vh",
   [theme.breakpoints.down("sm")]: {
     padding: theme.spacing(8, 0),
   },

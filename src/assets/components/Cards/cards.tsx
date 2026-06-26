@@ -1,4 +1,4 @@
-import { Box, Card, CardActionArea, CardContent, Typography, styled } from "@mui/material";
+import { Box, Card, CardActionArea, CardContent, Grow, Typography, styled } from "@mui/material";
 import { useState } from "react";
 
 interface CardProps {
@@ -33,7 +33,7 @@ const StyledCardContent = styled(CardContent)(({ theme }) => ({
   padding: theme.spacing(3),
 }));
 
-export const Cards = ({ cardsArray }: { cardsArray: CardProps[] }) => {
+export const Cards = ({ cardsArray, visible }: { cardsArray: CardProps[]; visible: boolean }) => {
   const [selectedCard, setSelectedCard] = useState(0);
 
   return (
@@ -46,43 +46,50 @@ export const Cards = ({ cardsArray }: { cardsArray: CardProps[] }) => {
       }}
     >
       {cardsArray.map((card: CardProps, index: number) => (
-        <StyledCard key={card.id}>
-          <CardActionArea
-            onClick={() => setSelectedCard(index)}
-            data-active={selectedCard === index ? "" : undefined}
-            sx={{
-              height: "100%",
-              "&[data-active]": {
-                backgroundColor: "rgba(1, 75, 116, 0.15)",
-                borderColor: "rgba(100, 200, 255, 0.3)",
-              },
-            }}
-          >
-            <StyledCardContent>
-              <Typography
-                variant="h5"
-                component="div"
-                sx={{
-                  fontWeight: 700,
-                  fontSize: "1.3rem",
-                  letterSpacing: "0.01em",
-                }}
-              >
-                {card.title}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  opacity: 0.85,
-                  lineHeight: 1.6,
-                  fontSize: "0.95rem",
-                }}
-              >
-                {card.description}
-              </Typography>
-            </StyledCardContent>
-          </CardActionArea>
-        </StyledCard>
+        <Grow
+          key={card.id}
+          in={visible}
+          timeout={600}
+          style={{ transitionDelay: `${index * 30}ms`, transformOrigin: "top center" }}
+        >
+          <StyledCard>
+            <CardActionArea
+              onClick={() => setSelectedCard(index)}
+              data-active={selectedCard === index ? "" : undefined}
+              sx={{
+                height: "100%",
+                "&[data-active]": {
+                  backgroundColor: "rgba(1, 75, 116, 0.15)",
+                  borderColor: "rgba(100, 200, 255, 0.3)",
+                },
+              }}
+            >
+              <StyledCardContent>
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: "1.3rem",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  {card.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    opacity: 0.85,
+                    lineHeight: 1.6,
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  {card.description}
+                </Typography>
+              </StyledCardContent>
+            </CardActionArea>
+          </StyledCard>
+        </Grow>
       ))}
     </Box>
   );

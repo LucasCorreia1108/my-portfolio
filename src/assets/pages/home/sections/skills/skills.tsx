@@ -1,5 +1,5 @@
 import { Box, Container, Grow, Typography, styled } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Cards } from "../../../../components/Cards/cards";
 
 const StyledSkillsSection = styled("section")(({ theme }) => ({
@@ -38,6 +38,7 @@ const SkillsTitle = styled(Typography)(({ theme }) => ({
 
 export const Skills = () => {
   const [visible, setVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const cardsArray = [
     {
       id: 1,
@@ -79,11 +80,28 @@ export const Skills = () => {
   ];
 
   useEffect(() => {
-    setVisible(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <StyledSkillsSection>
+    <StyledSkillsSection ref={sectionRef}>
       <Container maxWidth="lg">
         <Grow
           in={visible}
@@ -92,7 +110,7 @@ export const Skills = () => {
         >
           <Box sx={{ position: "relative", zIndex: 1 }}>
             <SkillsTitle variant="h2">Habilidades</SkillsTitle>
-            <Cards cardsArray={cardsArray} />
+            <Cards cardsArray={cardsArray} visible={visible} />
           </Box>
         </Grow>
       </Container>
