@@ -1,6 +1,8 @@
 
 import NavBar from "../../components/navbar/NavBar"
+import { About } from "./sections/about/Abount"
 import { Hero } from "./sections/hero/Hero"
+import { Skills } from "./sections/skills/skills"
 
 export const Home = () => {
 
@@ -8,6 +10,8 @@ export const Home = () => {
         <>
             <NavBar />
             <Hero />
+            <About />
+            <Skills />
         </>
     )
 }

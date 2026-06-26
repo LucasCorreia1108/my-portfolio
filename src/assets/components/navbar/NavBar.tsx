@@ -1,4 +1,4 @@
-import { AppBar, MenuItem, Toolbar, Typography, styled } from "@mui/material"
+import { AppBar, Toolbar, Typography, styled } from "@mui/material"
 
 
 const NavBar = () => {
