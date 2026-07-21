@@ -101,7 +101,7 @@ export const Skills = () => {
   }, []);
 
   return (
-    <StyledSkillsSection ref={sectionRef}>
+    <StyledSkillsSection id="skill" ref={sectionRef}>
       <Container maxWidth="lg">
         <Grow
           in={visible}

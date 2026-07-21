@@ -4,11 +4,17 @@ interface StyledButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement
   children: React.ReactNode;
 }
 
-export const  StyledButton: React.FC<StyledButtonProps> = ({ children, href, download, onClick, ...rest }) => {
+export const StyledButton: React.FC<StyledButtonProps> = ({
+  children,
+  href,
+  download,
+  onClick,
+  ...rest
+}) => {
   const StyledBtn = styled("a")(({ theme }) => ({
     width: "100%",
     maxWidth: 250,
-    padding: "0.85rem 1.75rem",
+    padding: "1.5rem ",
     borderRadius: 999,
     border: "1px solid rgba(255, 255, 255, 0.18)",
     backgroundColor: "rgba(255, 255, 255, 0.08)",
@@ -16,6 +22,8 @@ export const  StyledButton: React.FC<StyledButtonProps> = ({ children, href, dow
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
+    whiteSpace: "nowrap",
+    lineHeight: 1,
     gap: "0.75rem",
     fontWeight: 700,
     cursor: "pointer",

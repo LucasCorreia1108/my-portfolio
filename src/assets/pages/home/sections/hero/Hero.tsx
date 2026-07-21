@@ -88,7 +88,7 @@ export const Hero = () => {
                   <StyledButton onClick={handleContactClick}>
                     <EmailIcon />
                     <Typography color="primary.contrastText" sx={{ textAlign: "center" }}>
-                      Contact Me
+                      Contato
                     </Typography>
                   </StyledButton>
                 </Box>

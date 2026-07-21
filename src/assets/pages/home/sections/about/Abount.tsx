@@ -59,7 +59,7 @@ export const About = () => {
   }, []);
 
   return (
-    <StyledAboutSection ref={aboutRef}>
+    <StyledAboutSection id="about" ref={aboutRef}>
       <Container maxWidth="md">
         
         <AboutContent className={isVisible ? "visible" : ""}>

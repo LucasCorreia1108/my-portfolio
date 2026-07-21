@@ -15,9 +15,9 @@ const NavBar = () => {
             <AppBar position="static" color="primary">
                 <StyledToolbar >
                     
-                    <Typography>About</Typography>
-                    <Typography>Skills</Typography>
-                    <Typography>Projects</Typography>
+                    <Typography component="a" href="#about" style={{ textDecoration: "none", color: "inherit" }}>About</Typography>
+                    <Typography component="a" href="#skill" style={{ textDecoration: "none", color: "inherit" }}>Skills</Typography>
+                    <Typography component="a" href="#projects" style={{ textDecoration: "none", color: "inherit" }}>Projects</Typography>
                 </StyledToolbar >
             </AppBar>
         </>
