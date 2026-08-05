@@ -17,6 +17,7 @@ interface Project {
   title: string;
   description: string;
   tech: string[];
+  image: string;
   repoUrl: string;
   liveUrl?: string;
 }
@@ -28,8 +29,37 @@ const projects: Project[] = [
     description:
       "Cardápio digital de um restaurante de culinária italiana: o cliente navega pelos pratos, monta o carrinho e finaliza o pedido. SPA em React consumindo uma API REST própria, com autenticação, carrinho e feedback global via Snackbar.",
     tech: ["React", "Vite", "React Router", "MUI", "Yup", "Node.js", "express"],
+    image: "/my_menu_tl.png",
     repoUrl: "https://github.com/LucasCorreia1108/my_menu_frontend",
     liveUrl: "https://my-menu-frontend-zeta.vercel.app/"
+  },
+  {
+    id: 2,
+    title: "GourmetOS",
+    description:
+      "Sistema para gestão de restaurante com fluxo de atendimento do salão à cozinha e ao caixa, incluindo abertura de mesas, pedidos em tempo real, fechamento de conta e painéis de acompanhamento.",
+    tech: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "MUI",
+      "React Router",
+      "TanStack Query",
+      "Zustand",
+      "Socket.IO Client",
+      "React Hook Form",
+      "Recharts",
+      "NestJS",
+      "PostgreSQL",
+      "Socket.IO",
+      "JWT",
+      "cloudinary",
+      "Docker",
+      "Swagger",
+    ],
+    image: "/GourmetOS_tl.png",
+    repoUrl: "https://github.com/LucasCorreia1108/restaurant-management-frontend",
+    liveUrl: "https://restaurant-management-frontend-9zpuk934r-lucas-correia.vercel.app/"
   },
 ];
 
@@ -89,6 +119,15 @@ const ProjectCard = styled(Box)(({ theme }) => ({
   },
 }));
 
+const ProjectImage = styled("img")(({ theme }) => ({
+  width: "100%",
+  aspectRatio: "16 / 10",
+  objectFit: "cover",
+  borderRadius: theme.shape.borderRadius,
+  border: "1px solid rgba(255, 255, 255, 0.12)",
+  backgroundColor: "rgba(255, 255, 255, 0.04)",
+}));
+
 export const Projects = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -139,6 +178,7 @@ export const Projects = () => {
                   }}
                 >
                   <ProjectCard>
+                    <ProjectImage src={project.image} alt={project.title} />
                     <Typography
                       variant="h5"
                       component="div"
