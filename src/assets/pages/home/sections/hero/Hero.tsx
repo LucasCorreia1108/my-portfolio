@@ -120,7 +120,7 @@ export const Hero = () => {
                   alignItems: "center",
                 }}
               >
-                <StyledButton href="/cv-lucas-correia.pdf" download>
+                <StyledButton href="/Lucas_Correia_Curriculo.pdf" download>
                   <DownloadForOfflineIcon />
                   <Typography color="primary.contrastText" sx={{ textAlign: "center" }}>
                     Download CV

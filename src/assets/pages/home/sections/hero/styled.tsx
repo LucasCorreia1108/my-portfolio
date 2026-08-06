@@ -28,7 +28,6 @@ export const StyledHero = styled("div")(({ theme }) => ({
 export const StyledAvatar = styled("img")(() => ({
   width: "100%",
   maxWidth: 420,
-  aspectRatio: "1",
   borderRadius: "50%",
   border: "2px solid rgba(148, 163, 184, 0.28)",
   boxShadow: "0 30px 90px rgba(2, 6, 23, 0.45)",
