@@ -3,7 +3,8 @@ import { Box, Container, Typography, styled } from "@mui/material";
 
 const StyledAboutSection = styled("section")(({ theme }) => ({
   padding: theme.spacing(10, 0),
-//   backgroundColor: theme.palette.secondary.main,
+  background:
+    "linear-gradient(180deg, rgba(6, 11, 23, 0.18) 0%, rgba(11, 18, 32, 0.42) 100%)",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -17,11 +18,13 @@ const AboutContent = styled(Box)(({ theme }) => ({
   maxWidth: 760,
   width: "100%",
   textAlign: "center",
-  padding: theme.spacing(0, 2),
-  backdropFilter: "blur(10px)",
-  borderRadius: theme.shape.borderRadius,
-  border: `1px solid rgba(255,255,255,0.12)`,
-  boxShadow: "0 18px 50px rgba(0, 0, 0, 0.08)",
+  padding: theme.spacing(5, 4),
+  backdropFilter: "blur(16px)",
+  WebkitBackdropFilter: "blur(16px)",
+  borderRadius: 25,
+  border: "1px solid rgba(148, 163, 184, 0.16)",
+  background: "linear-gradient(180deg, rgba(15, 23, 42, 0.62), rgba(30, 41, 59, 0.38))",
+  boxShadow: "0 24px 60px rgba(2, 6, 23, 0.22)",
   opacity: 0,
   transform: "translateY(40px)",
   transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -69,10 +72,10 @@ export const About = () => {
             fontWeight: 800,
             mb: 2,
             textAlign: "center",
-            color: (theme) => theme.palette.secondary.contrastText,
-            opacity: 0,
-            transform: "translateY(30px)",
-            animation: isVisible ? "slideUp 1.8s cubic-bezier(0.24, 1.56, 0.64, 1) forwards" : "none",
+              color: (theme) => theme.palette.primary.contrastText,
+              opacity: 0,
+              transform: "translateY(30px)",
+              animation: isVisible ? "slideUp 1.1s cubic-bezier(0.24, 1.56, 0.64, 1) forwards" : "none",
             "@keyframes slideUp": {
               from: {
                 opacity: 0,
@@ -90,7 +93,7 @@ export const About = () => {
           <Typography
             variant="body1"
             sx={{
-              color: (theme) => theme.palette.secondary.contrastText,
+              color: (theme) => theme.palette.secondary.main,
               fontSize: "1.05rem",
               lineHeight: 1.8,
               letterSpacing: "0.01em",

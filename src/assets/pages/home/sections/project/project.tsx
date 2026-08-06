@@ -65,7 +65,8 @@ const projects: Project[] = [
 
 const StyledProjectsSection = styled("section")(({ theme }) => ({
   padding: theme.spacing(12, 0),
-  backgroundColor: theme.palette.primary.main,
+  background:
+    "linear-gradient(180deg, rgba(11, 18, 32, 0.86), rgba(6, 11, 23, 0.98))",
   color: theme.palette.secondary.main,
   display: "flex",
   justifyContent: "center",
@@ -78,7 +79,7 @@ const StyledProjectsSection = styled("section")(({ theme }) => ({
     position: "absolute",
     inset: 0,
     background:
-      "radial-gradient(circle at 80% -22%, rgba(236, 72, 153, 0.08), transparent 30%), radial-gradient(circle at 20% -56%, rgba(59, 130, 246, 0.08), transparent 30%)",
+      "radial-gradient(circle at 80% -22%, rgba(236, 72, 153, 0.08), transparent 30%), radial-gradient(circle at 20% -56%, rgba(59, 130, 246, 0.12), transparent 30%)",
     pointerEvents: "none",
   },
   [theme.breakpoints.down("sm")]: {
@@ -98,13 +99,13 @@ const ProjectsTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const ProjectCard = styled(Box)(({ theme }) => ({
-  backgroundColor: "rgba(255, 255, 255, 0.08)",
-  backdropFilter: "blur(12px)",
-  WebkitBackdropFilter: "blur(12px)",
-  border: "1px solid rgba(255, 255, 255, 0.12)",
+  background: "linear-gradient(180deg, rgba(15, 23, 42, 0.68), rgba(30, 41, 59, 0.48))",
+  backdropFilter: "blur(16px)",
+  WebkitBackdropFilter: "blur(16px)",
+  border: "1px solid rgba(148, 163, 184, 0.16)",
   borderRadius: theme.shape.borderRadius,
   transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
-  boxShadow: "0 20px 60px rgba(0, 0, 0, 0.15)",
+  boxShadow: "0 24px 60px rgba(2, 6, 23, 0.24)",
   color: theme.palette.secondary.main,
   height: "100%",
   display: "flex",
@@ -113,19 +114,22 @@ const ProjectCard = styled(Box)(({ theme }) => ({
   padding: theme.spacing(4),
   "&:hover": {
     transform: "translateY(-12px) scale(1.02)",
-    backgroundColor: "rgba(255, 255, 255, 0.12)",
-    borderColor: "rgba(255, 255, 255, 0.2)",
-    boxShadow: "0 30px 90px rgba(0, 0, 0, 0.25)",
+    background: "linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(30, 41, 59, 0.58))",
+    borderColor: "rgba(56, 189, 248, 0.26)",
+    boxShadow: "0 30px 90px rgba(2, 6, 23, 0.3)",
   },
 }));
 
 const ProjectImage = styled("img")(({ theme }) => ({
   width: "100%",
-  aspectRatio: "16 / 10",
+  height: 240,
   objectFit: "cover",
   borderRadius: theme.shape.borderRadius,
-  border: "1px solid rgba(255, 255, 255, 0.12)",
-  backgroundColor: "rgba(255, 255, 255, 0.04)",
+  border: "1px solid rgba(148, 163, 184, 0.16)",
+  backgroundColor: "rgba(15, 23, 42, 0.44)",
+  [theme.breakpoints.down("sm")]: {
+    height: 200,
+  },
 }));
 
 export const Projects = () => {
@@ -163,7 +167,7 @@ export const Projects = () => {
               sx={{
                 width: "100%",
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(min(320px, 100%), 1fr))",
+                gridTemplateColumns: "repeat(auto-fill, minmax(min(380px, 100%), 1fr))",
                 gap: 3,
               }}
             >

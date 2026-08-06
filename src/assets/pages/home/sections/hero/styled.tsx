@@ -2,19 +2,22 @@ import { styled } from "@mui/material";
 
 export const StyledHero = styled("div")(({ theme }) => ({
   position: "relative",
-  minHeight: "100vh",
+  minHeight: "100svh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   padding: `${theme.spacing(10)} ${theme.spacing(2)}`,
   overflow: "hidden",
-  background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 45%, rgba(35, 35, 35, 0.95) 100%)`,
-  boxShadow: "inset 0 0 120px rgba(0, 0, 0, 0.32)",
+  background:
+    "radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.18), transparent 28%), radial-gradient(circle at 80% 12%, rgba(168, 85, 247, 0.16), transparent 24%), linear-gradient(135deg, #060b17 0%, #0b1220 50%, #09111d 100%)",
+  boxShadow: "inset 0 0 120px rgba(2, 6, 23, 0.42)",
   "&::before": {
     content: '""',
     position: "absolute",
     inset: 0,
-    background: "radial-gradient(circle at top left, rgba(59, 130, 246, 0.22), transparent 30%), radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.18), transparent 28%)",
+    background:
+      "linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px)",
+    backgroundSize: "64px 64px",
     pointerEvents: "none",
   },
   [theme.breakpoints.up("md")]: {
@@ -22,17 +25,17 @@ export const StyledHero = styled("div")(({ theme }) => ({
   },
 }));
 
-export const StyledAvatar = styled("img")(({ theme }) => ({
+export const StyledAvatar = styled("img")(() => ({
   width: "100%",
-  maxWidth: 340,
-//   aspectRatio: "1",
+  maxWidth: 420,
+  aspectRatio: "1",
   borderRadius: "50%",
-  border: `6px solid ${theme.palette.secondary.main}`,
-  boxShadow: "0 24px 70px rgba(26, 92, 59, 0.35)",
+  border: "2px solid rgba(148, 163, 184, 0.28)",
+  boxShadow: "0 30px 90px rgba(2, 6, 23, 0.45)",
   transition: "transform 0.45s ease, filter 0.45s ease",
-  backgroundColor: theme.palette.primary.dark,
+  background: "linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8))",
   "&:hover": {
     transform: "translateY(-8px) scale(1.04)",
-    filter: "saturate(1.08)",
+    filter: "saturate(1.08) contrast(1.03)",
   },
 }));

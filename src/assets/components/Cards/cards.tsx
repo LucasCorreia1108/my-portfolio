@@ -8,19 +8,19 @@ interface CardProps {
 }
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  backgroundColor: "rgba(255, 255, 255, 0.08)",
-  backdropFilter: "blur(12px)",
-  WebkitBackdropFilter: "blur(12px)",
-  border: "1px solid rgba(255, 255, 255, 0.12)",
+  background: "linear-gradient(180deg, rgba(15, 23, 42, 0.68), rgba(30, 41, 59, 0.48))",
+  backdropFilter: "blur(16px)",
+  WebkitBackdropFilter: "blur(16px)",
+  border: "1px solid rgba(148, 163, 184, 0.16)",
   transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
-  boxShadow: "0 20px 60px rgba(0, 0, 0, 0.15)",
+  boxShadow: "0 24px 60px rgba(2, 6, 23, 0.22)",
   color: theme.palette.secondary.main,
   height: "100%",
   "&:hover": {
     transform: "translateY(-12px) scale(1.02)",
-    backgroundColor: "rgba(255, 255, 255, 0.12)",
-    borderColor: "rgba(255, 255, 255, 0.2)",
-    boxShadow: "0 30px 90px rgba(0, 0, 0, 0.25)",
+    background: "linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(30, 41, 59, 0.58))",
+    borderColor: "rgba(56, 189, 248, 0.26)",
+    boxShadow: "0 30px 90px rgba(2, 6, 23, 0.3)",
   },
 }));
 
@@ -59,8 +59,8 @@ export const Cards = ({ cardsArray, visible }: { cardsArray: CardProps[]; visibl
               sx={{
                 height: "100%",
                 "&[data-active]": {
-                  backgroundColor: "rgba(1, 75, 116, 0.15)",
-                  borderColor: "rgba(100, 200, 255, 0.3)",
+                    backgroundColor: "rgba(56, 189, 248, 0.1)",
+                    borderColor: "rgba(56, 189, 248, 0.32)",
                 },
               }}
             >
